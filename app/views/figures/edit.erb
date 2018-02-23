@@ -2,12 +2,16 @@
 <form action="/figures/<%=@figure.id%>" method="post">
   <label>Figure Name:</label>
   <br></br>
-  <input type="text" name="figure[name]" id="figure_name" value="<%=@figure.name%>">
+  <input type="text"
+  name="figure[name]" id="figure_name" value="<%=@figure.name%>">
   <br></br>
+
   <label>Select from exisiting Figure Titles:</label>
   <br></br>
   <%Title.all.each do |title|%>
-    <input type="checkbox" name="figure[title_ids][]" value="<%=title.id%>" id="title_<%=title.id%>" <%='checked' if @figure.title_ids.include?(title.id)%>><%=title.name%></input>
+    <input type="checkbox"
+    name="figure[title_ids][]" value="<%=title.id%>" id="title_<%=title.id%>"
+    <%='checked' if @figure.title_ids.include?(title.id)%><%=title.name%></input>
   <%end%>
   <br></br>
   <label>and/or, created a new Title:</label>
